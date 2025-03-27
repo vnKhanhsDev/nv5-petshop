@@ -17,7 +17,8 @@ $allow_func = [
     'main',
     'products',
     'orders',
-    'customers'
+    'customers',
+    'products/add'
 ];
 
 define('NV_IS_FILE_ADMIN', true);

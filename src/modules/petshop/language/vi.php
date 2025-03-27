@@ -20,5 +20,7 @@ $lang_translator['info'] = '';
 $lang_translator['langtype'] = 'lang_module';
 
 $lang_module['products'] = 'Quản lý sản phẩm';
+$lang_module['add_product'] = 'Thêm sản phẩm';
 $lang_module['orders'] = 'Quản lý đơn hàng';
 $lang_module['customers'] = 'Quản lý khách hàng';
+$lang_module['empty'] = 'Không có dữ liệu';

@@ -13,7 +13,30 @@ if (!defined('NV_IS_FILE_ADMIN')) {
     exit('Stop!!!');
 }
 
-$contents = "Quản lý sản phẩm";
+$page_title = $nv_Lang->getModule('products');
+
+$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_products ORDER BY id DESC';
+$_rows = $db->query($sql)->fetchAll();
+$num = count($_rows);
+
+$xtpl = new XTemplate('products.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
+// echo NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file;
+$xtpl->assign('LANG', \NukeViet\Core\Language::$lang_module);
+$xtpl->assign('GLANG', \NukeViet\Core\Language::$lang_global);
+
+$add_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products/add';
+$xtpl->assign('ADD_URL', $add_url);
+
+if ($num) {
+    foreach ($_rows as $row) {
+        $xtpl->assign('ROW', $row);
+        $xtpl->parse('main.loop');
+    }
+    $xtpl->parse('main');
+    $contents = $xtpl->text('main');
+} else {
+    $contents = "Không có sản phẩm";
+}
 
 include NV_ROOTDIR . '/includes/header.php';
 echo nv_admin_theme($contents);
