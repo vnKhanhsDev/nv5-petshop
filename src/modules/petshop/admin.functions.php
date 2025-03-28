@@ -16,7 +16,13 @@ if (!defined('NV_ADMIN') or !defined('NV_MAINFILE') or !defined('NV_IS_MODADMIN'
 $allow_func = [
     'main',
     'products',
+    'products/add',
+    'products/detail',
+    'products/edit',
+    'products/delete',
     'orders',
+    'orders/detail',
+    'orders/delete',
     'customers'
 ];
 
