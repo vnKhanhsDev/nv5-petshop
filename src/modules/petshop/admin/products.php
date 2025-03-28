@@ -29,6 +29,8 @@ $xtpl->assign('ADD_URL', $add_url);
 
 if ($num) {
     foreach ($_rows as $row) {
+        $row['delete_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products/delete&id=' . $row['id'];
+
         $xtpl->assign('ROW', $row);
         $xtpl->parse('main.loop');
     }
