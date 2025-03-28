@@ -25,7 +25,7 @@
                 <td>{ROW.quantity}</td>
                 <td>{ROW.status}</td>
                 <td>
-                    <a href="" class="btn btn-success">Sửa</a>
+                    <a href="{ROW.edit_url}" class="btn btn-success">Sửa</a>
                     <a href="{ROW.delete_url}" class="btn btn-warning">Xoá</a>
                 </td>
             </tr>
