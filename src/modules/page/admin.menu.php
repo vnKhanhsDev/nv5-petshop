@@ -15,6 +15,7 @@ if (!defined('NV_ADMIN')) {
 
 $submenu['content'] = $nv_Lang->getModule('add');
 
+
 if (defined('NV_IS_SPADMIN')) {
     $submenu['config'] = $nv_Lang->getModule('config');
 }
