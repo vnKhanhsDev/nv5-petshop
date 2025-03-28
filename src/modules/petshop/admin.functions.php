@@ -17,9 +17,12 @@ $allow_func = [
     'main',
     'products',
     'products/add',
+    'products/detail',
     'products/edit',
     'products/delete',
     'orders',
+    'orders/detail',
+    'orders/delete',
     'customers'
 ];
 
