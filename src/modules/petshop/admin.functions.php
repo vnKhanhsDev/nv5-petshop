@@ -15,15 +15,32 @@ if (!defined('NV_ADMIN') or !defined('NV_MAINFILE') or !defined('NV_IS_MODADMIN'
 
 $allow_func = [
     'main',
-    'products',
-    'products/add',
-    'products/detail',
-    'products/edit',
-    'products/delete',
+    'pets',
+    'pets/add',
+    'pets/detail',
+    'pets/edit',
+    'pets/delete',
+    'accessories',
+    'accessories/add',
+    'accessories/detail',
+    'accessories/edit',
+    'accessories/delete',
+    'services',
+    'services/add',
+    'services/detail',
+    'services/edit',
+    'services/delete',
     'orders',
     'orders/detail',
-    'orders/delete',
-    'customers'
+    'orders/edit',
+    'customers',
+    'customers/detail',     
+    'customers/delete',
+    'posts',
+    'posts/create',
+    'posts/detail',
+    'posts/edit',
+    'posts/delete'
 ];
 
 define('NV_IS_FILE_ADMIN', true);
