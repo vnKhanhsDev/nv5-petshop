@@ -1,4 +1,4 @@
-<!-- BEGIN: add -->
+<!-- BEGIN: main -->
 <form action="" method="post">
     <div class="form-group">
         <label>Tên sản phẩm</label>
@@ -9,8 +9,8 @@
         <input type="number" name="category_id" class="form-control" required>
     </div>
     <div class="form-group">
-        <label>Giá sản phẩm</label>
-        <input type="number" name="price" class="form-control" required>
+        <label>Giá sản phẩm (Đơn vị: VND)</label>
+        <input type="text" name="price" class="form-control" required pattern="\d+" >
     </div>
     <div class="form-group">
         <label>Số lượng tồn kho</label>
@@ -33,4 +33,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Lưu</button>
 </form>
-<!-- END: add -->
+<!-- END: main -->

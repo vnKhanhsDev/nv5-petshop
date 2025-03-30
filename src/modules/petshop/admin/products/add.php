@@ -56,8 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Load giao diện add.tpl
 $xtpl = new XTemplate('add.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file . '/products/');
 $xtpl->assign('LANG', \NukeViet\Core\Language::$lang_module);
-$xtpl->parse('add');
-$contents = $xtpl->text('add');
+$xtpl->parse('main');
+$contents = $xtpl->text('main');
 
 include (NV_ROOTDIR . "/includes/header.php");
 echo nv_admin_theme($contents);

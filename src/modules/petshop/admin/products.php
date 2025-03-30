@@ -15,27 +15,30 @@ if (!defined('NV_IS_FILE_ADMIN')) {
 
 $page_title = $nv_Lang->getModule('product_list');
 
-$page = $nv_Request->get_int('page', 'get', 1);
-$per_page = 10;
-$offset = ($page - 1) * $per_page;  // Vị trí bắt đầu lấy dữ liệu
+$base_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products';
 
 // Lấy tổng số sản phẩm (Số dòng dữ liệu)
 $sql = 'SELECT COUNT(*) FROM ' . NV_PREFIXLANG . '_' . $module_data . '_products';
-$total_rows = $db->query($sql)->fetchColumn();
+$total_rows = $db->query($sql)->fetchColumn(); 
 
-$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_products ORDER BY id DESC LIMIT ' . $offset . ', ' . $per_page;
+// Số dòng dữ liệu trên một trang
+$per_page = 10;
 
-$_rows = $db->query($sql)->fetchAll();
-$num = count($_rows);
+// Lấy trang hiện tại
+$page = $nv_Request->get_int('page', 'get', 1);
 
 // Tạo URL phân trang
-$base_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products';
 $generate_page = nv_generate_page($base_url, $total_rows, $per_page, $page);
+
+// Lấy dữ liệu fill vào trang hiện tại
+$offset = ($page - 1) * $per_page;  // Vị trí bắt đầu lấy dữ liệu
+$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_products ORDER BY id DESC LIMIT ' . $offset . ', ' . $per_page;
+$_rows = $db->query($sql)->fetchAll();
 
 $xtpl = new XTemplate('products.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
 $xtpl->assign('LANG', \NukeViet\Core\Language::$lang_module);
 $xtpl->assign('GLANG', \NukeViet\Core\Language::$lang_global);
-$xtpl->assign('ADD_URL', NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products/add');
+$xtpl->assign('ADD_URL', $base_url . '/add');
 
 if (!empty($_rows)) {
     foreach ($_rows as $row) {
