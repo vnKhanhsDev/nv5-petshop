@@ -13,28 +13,36 @@ if (!defined('NV_IS_FILE_ADMIN')) {
     exit('Stop!!!');
 }
 
-$page_title = $nv_Lang->getModule('products');
+$page_title = $nv_Lang->getModule('product_list');
 
-$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_products ORDER BY id DESC';
+$page = $nv_Request->get_int('page', 'get', 1);
+$per_page = 10;
+$offset = ($page - 1) * $per_page;  // Vị trí bắt đầu lấy dữ liệu
+
+// Lấy tổng số sản phẩm (Số dòng dữ liệu)
+$sql = 'SELECT COUNT(*) FROM ' . NV_PREFIXLANG . '_' . $module_data . '_products';
+$total_rows = $db->query($sql)->fetchColumn();
+
+$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_products ORDER BY id DESC LIMIT ' . $offset . ', ' . $per_page;
+
 $_rows = $db->query($sql)->fetchAll();
 $num = count($_rows);
 
+// Tạo URL phân trang
+$base_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products';
+$generate_page = nv_generate_page($base_url, $total_rows, $per_page, $page);
+
 $xtpl = new XTemplate('products.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
-// echo NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file;
 $xtpl->assign('LANG', \NukeViet\Core\Language::$lang_module);
 $xtpl->assign('GLANG', \NukeViet\Core\Language::$lang_global);
+$xtpl->assign('ADD_URL', NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products/add');
 
-$add_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products/add';
-$xtpl->assign('ADD_URL', $add_url);
-
-if ($num) {
+if (!empty($_rows)) {
     foreach ($_rows as $row) {
-        $row['edit_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products/edit&id=' . $row['id'];
-        $row['delete_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products/delete&id=' . $row['id'];
-
         $xtpl->assign('ROW', $row);
         $xtpl->parse('main.loop');
     }
+    $xtpl->assign('GENERATE_PAGE', $generate_page);
     $xtpl->parse('main');
     $contents = $xtpl->text('main');
 } else {

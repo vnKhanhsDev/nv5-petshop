@@ -14,6 +14,7 @@
                 <th>Giá sản phẩm</th>
                 <th>Số lượng tồn kho</th>
                 <th>Trạng thái</th>
+                <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
@@ -23,8 +24,9 @@
                 <td>{ROW.name}</td>
                 <td>{ROW.price}</td>
                 <td>{ROW.quantity}</td>
-                <td>{ROW.status}</td>
+                <td>{ROW.is_show}</td>
                 <td>
+                    <a href="" class="btn btn-success">Chi tiết</a>
                     <a href="{ROW.edit_url}" class="btn btn-success">Sửa</a>
                     <a href="{ROW.delete_url}" class="btn btn-warning">Xoá</a>
                 </td>
@@ -32,5 +34,10 @@
             <!-- END: loop -->
         </tbody>
     </table>
+</div>
+
+<!-- Phân trang -->
+<div class="text-center">
+    {GENERATE_PAGE}
 </div>
 <!-- END: main -->
