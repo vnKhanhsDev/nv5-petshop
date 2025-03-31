@@ -10,7 +10,7 @@
     <p><strong>Màu lông:</strong> {PET.fur_color}</p>
     <p><strong>Cân nặng:</strong> {PET.weight} kg</p>
     <p><strong>Nguồn gốc:</strong> {PET.origin}</p>
-    <p><strong>Đã tiêm phòng:</strong> {PET.is_vaccinated ? 'Có' : 'Chưa'}</p>
+    <p><strong>Đã tiêm phòng:</strong> {PET.is_vaccinated}</p>
     <p><strong>Chi tiết tiêm phòng:</strong> {PET.vaccination_details}</p>
     <p><strong>Giá:</strong> {PET.price} VND</p>
     <p><strong>Giảm giá:</strong> {PET.discount} %</p>
