@@ -57,7 +57,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="update_status.php" method="POST">
+                <form action="update.php" method="POST">
                     <input type="hidden" name="id" id="order_id">
                     <div class="form-group">
                         <label for="status">Chọn trạng thái:</label>
@@ -81,5 +81,27 @@
         document.getElementById('order_id').value = id;
         document.getElementById('status').value = status;
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#editOrderModal form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Ngăn form load lại trang
+
+        let formData = new FormData(this);
+        
+        fetch("src\modules\petshop\admin\orders\update.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            if (data.status === "success") {
+                location.reload(); // Reload trang để cập nhật trạng thái
+            }
+        })
+        .catch(error => console.error("Lỗi:", error));
+    });
+});
+
 </script>
 <!-- END: main -->
