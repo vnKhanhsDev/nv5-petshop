@@ -1,9 +1,9 @@
 <!-- BEGIN: empty -->
-<a href="#" class="btn btn-success">{LANG.add_pet}</a>
+<a href="#" class="btn btn-success">{LANG.add_accessories}</a>
 <div class="alert alert-info">{LANG.empty}</div>
 <!-- END: empty -->
 <!-- BEGIN: main -->
-<a href="{ADD_URL}" class="btn btn-success">{LANG.add_pet}</a>
+<a href="{ADD_URL}" class="btn btn-success">{LANG.add_accessories}</a>
 <div class="table-responsive">
     <table class="table table-bordered">
         <thead>
