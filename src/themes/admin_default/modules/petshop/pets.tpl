@@ -25,6 +25,7 @@
                 <td>{ROW.stock}</td>
                 <td>{ROW.is_show}</td>
                 <td>
+                    <a href="{ROW.detail_url}" class="btn btn-success">Chi tiết</a>
                     <a href="" class="btn btn-success">Sửa</a>
                     <a href="" class="btn btn-warning">Xoá</a>
                 </td>

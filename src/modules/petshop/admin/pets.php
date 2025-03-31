@@ -42,6 +42,8 @@ $xtpl->assign('ADD_URL', $base_url . '/add');
 
 if (!empty($_rows)) {
     foreach ($_rows as $row) {
+        $row['detail_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=pets/detail&id=' . $row['id'];
+
         $xtpl->assign('ROW', $row);
         $xtpl->parse('main.loop');
     }
