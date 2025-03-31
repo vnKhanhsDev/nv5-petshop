@@ -13,7 +13,7 @@ if (!defined('NV_IS_FILE_ADMIN')) {
     exit('Stop!!!');
 }
 
-$contents = "Quản lý sản phẩm";
+$contents = "Quản lý thú cưng";
 
 include NV_ROOTDIR . '/includes/header.php';
 echo nv_admin_theme($contents);

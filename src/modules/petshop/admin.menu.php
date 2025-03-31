@@ -13,8 +13,9 @@ if (!defined('NV_ADMIN')) {
     exit('Stop!!!');
 }
 
-$submenu['products'] = $nv_Lang->getModule('products');
+$submenu['pets'] = $nv_Lang->getModule('pets');
+$submenu['accessories'] = $nv_Lang->getModule('accessories');
+$submenu['services'] = $nv_Lang->getModule('services');
 $submenu['orders'] = $nv_Lang->getModule('orders');
 $submenu['customers'] = $nv_Lang->getModule('customers');
-$submenu['services'] = $nv_Lang->getModule('services');
-
+$submenu['posts'] = $nv_Lang->getModule('posts');
