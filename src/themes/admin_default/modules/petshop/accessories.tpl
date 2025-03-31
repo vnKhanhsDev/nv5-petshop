@@ -3,8 +3,9 @@
 <div class="alert alert-info">{LANG.empty}</div>
 <!-- END: empty -->
 <!-- BEGIN: main -->
-<a href="{ADD_URL}" class="btn btn-success">{LANG.add_accessories}</a>
-<div class="table-responsive">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<a href="{ADD_URL}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Thêm phụ kiện{LANG.add_accessories}</a>
+<div class=" mt-2 table-responsive">
     <table class="table table-bordered">
         <thead>
             <tr>
