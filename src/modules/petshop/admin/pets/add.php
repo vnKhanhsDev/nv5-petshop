@@ -15,12 +15,12 @@ if (!defined('NV_IS_FILE_ADMIN')) {
 
 $page_title = 'Thêm sản phẩm';
 
+// Lấy danh sách loài và giống
 $sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_species';
 $specie_list = $db->query($sql)->fetchAll();
 
 $sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_breeds';
 $breeds = $db->query($sql)->fetchAll();
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
@@ -36,38 +36,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = $_POST['price'] ?? 0;
     $discount = $_POST['discount'] ?? 0;
     $stock = $_POST['stock'] ?? 0;
-    $tags = isset($_POST['tags']) ? $_POST['tags'] : [];
+    $tags = isset($_POST['tags']) ? implode(',', $_POST['tags']) : ''; // Chuyển mảng thành chuỗi
     $description = $_POST['description'] ?? '';
     $image = $_POST['image'] ?? '';
     $status = $_POST['status'] ?? 0;
+    $rating = 0; // Giá trị mặc định
     $created_at = time();
     $updated_at = time();
 
-    // if (!empty($name) && !empty($category_id)) {
-    //     $stmt = $db->prepare('INSERT INTO ' . NV_PREFIXLANG . '_' . $module_data . '_products 
-    //         (name, category_id, price, quantity, image, description, status, created_at, updated_at) 
-    //         VALUES (:name, :category_id, :price, :quantity, :image, :description, :status, :created_at, :updated_at)');
+    if (!empty($name) && $specie_id !== 0 && $breed_id !== 0) {
+        $sql  = 'INSERT INTO ' . NV_PREFIXLANG . '_' . $module_data . '_pets 
+                (`name`, `species_id`, `breed_id`, `gender`, `age`, `fur_color`, `weight`, `origin`, `is_vaccinated`, `vaccination_details`, `price`, `discount`, `stock`, `tags`, `rating`, `description`, `image`, `is_show`, `created_at`, `updated_at`) 
+                VALUES 
+                (:name, :species_id, :breed_id, :gender, :age, :fur_color, :weight, :origin, :is_vaccinated, :vaccination_details, :price, :discount, :stock, :tags, :rating, :description, :image, :is_show, :created_at, :updated_at)';
+        $stmt = $db->prepare($sql);
 
-    //     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-    //     $stmt->bindParam(':category_id', $category_id, PDO::PARAM_INT);
-    //     $stmt->bindParam(':price', $price, PDO::PARAM_INT);
-    //     $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
-    //     $stmt->bindParam(':image', $image, PDO::PARAM_STR);
-    //     $stmt->bindParam(':description', $description, PDO::PARAM_STR);
-    //     $stmt->bindParam(':status', $status, PDO::PARAM_INT);
-    //     $stmt->bindParam(':created_at', $created_at, PDO::PARAM_INT);
-    //     $stmt->bindParam(':updated_at', $updated_at, PDO::PARAM_INT);
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':species_id', $specie_id, PDO::PARAM_INT);
+        $stmt->bindParam(':breed_id', $breed_id, PDO::PARAM_INT);
+        $stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
+        $stmt->bindParam(':age', $age, PDO::PARAM_INT);
+        $stmt->bindParam(':fur_color', $fur_color, PDO::PARAM_STR);
+        $stmt->bindParam(':weight', $weight, PDO::PARAM_INT);
+        $stmt->bindParam(':origin', $origin, PDO::PARAM_STR);
+        $stmt->bindParam(':is_vaccinated', $is_vaccinated, PDO::PARAM_INT);
+        $stmt->bindParam(':vaccination_details', $vaccination_details, PDO::PARAM_STR);
+        $stmt->bindParam(':price', $price, PDO::PARAM_INT);
+        $stmt->bindParam(':discount', $discount, PDO::PARAM_INT);
+        $stmt->bindParam(':stock', $stock, PDO::PARAM_INT);
+        $stmt->bindParam(':tags', $tags, PDO::PARAM_STR);
+        $stmt->bindParam(':rating', $rating, PDO::PARAM_INT);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':image', $image, PDO::PARAM_STR);
+        $stmt->bindParam(':is_show', $status, PDO::PARAM_INT);
+        $stmt->bindParam(':created_at', $created_at, PDO::PARAM_INT);
+        $stmt->bindParam(':updated_at', $updated_at, PDO::PARAM_INT);
 
-    //     if ($stmt->execute()) {
-    //         header('Location: ' . NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA 
-    //             . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&op=products');
-    //         exit();
-    //     } else {
-    //         echo 'Lỗi khi thêm sản phẩm.';
-    //     }
-    // } else {
-    //     echo 'Vui lòng nhập đầy đủ thông tin bắt buộc.';
-    // }
+        if ($stmt->execute()) {
+            header('Location: ' . NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&op=pets');
+            exit();
+        } else {
+            echo 'Lỗi khi thêm sản phẩm.';
+        }
+    } else {
+        echo 'Vui lòng nhập đầy đủ thông tin bắt buộc.';
+    }
 }
 
 // Load giao diện add.tpl
