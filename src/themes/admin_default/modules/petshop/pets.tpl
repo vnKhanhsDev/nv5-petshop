@@ -27,7 +27,7 @@
                 <td>
                     <a href="{ROW.detail_url}" class="btn btn-success">Chi tiết</a>
                     <a href="" class="btn btn-success">Sửa</a>
-                    <a href="" class="btn btn-warning">Xoá</a>
+                    <a href="{ROW.delete_url}" class="btn btn-warning">Xoá</a>
                 </td>
             </tr>
             <!-- END: loop -->
