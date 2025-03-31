@@ -13,6 +13,11 @@
                 <th>Giá sản phẩm</th>
                 <th>Số lượng tồn kho</th>
                 <th>Trạng thái</th>
+                <th>Màu sắc</th>
+                <th>Kích cỡ</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
