@@ -22,3 +22,5 @@ $lang_translator['langtype'] = 'lang_module';
 $lang_module['products'] = 'Quản lý sản phẩm';
 $lang_module['orders'] = 'Quản lý đơn hàng';
 $lang_module['customers'] = 'Quản lý khách hàng';
+$lang_module['services'] = 'Quản lý dịch vụ';
+$lang_module['add_service'] = 'Thêm dịch vụ';
