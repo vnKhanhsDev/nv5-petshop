@@ -11,9 +11,10 @@
             <tr>
                 <th>ID</th>
                 <th>Tên sản phẩm</th>
-                <th>Giá sản phẩm</th>
+                <th>Loại phụ kiện</th>
+                <th>Thương hiệu</th>
                 <th>Số lượng tồn kho</th>
-                <th>Trạng thái</th>
+                <th>Hạn sử dụng</th>
                 <th>Màu sắc</th>
                 <th>Kích cỡ</th>
                 <th>Giá</th>
@@ -26,6 +27,7 @@
             <tr>
                 <td>{ROW.id}</td>
                 <td>{ROW.name}</td>
+                <td>{ROW.type_name}</td>
                 <td>{ROW.brand}</td>
                 <td>{ROW.origin}</td>
                 <td>{ROW.expiration_date}</td>
@@ -34,16 +36,20 @@
                 <td>{ROW.price}</td>
                 <td>{ROW.stock}</td>
                 <td>
-                    <a href="" class="btn btn-success">Chi tiết</a>
-                    <a href="{ROW.edit_url}" class="btn btn-success">Sửa</a>
-                    <a href="{ROW.delete_url}" class="btn btn-warning">Xoá</a>
+                    <a href="{ROW.DETAIL_URL}" class="btn btn-success">Chi tiết</a>
+                    <a href="{ROW.EDIT_URL}" class="btn btn-success">Sửa</a>
+                    <a href="{ROW.DELETE_URL}" class="btn btn-warning" onclick="return confirmDelete();">Xoá</a>                
                 </td>
             </tr>
             <!-- END: loop -->
         </tbody>
     </table>
 </div>
-
+<script>
+    function confirmDelete() {
+        return confirm("Bạn có chắc chắn muốn xóa phụ kiện này không?");
+    }
+</script>
 <!-- Phân trang -->
 <div class="text-center">
     {GENERATE_PAGE}

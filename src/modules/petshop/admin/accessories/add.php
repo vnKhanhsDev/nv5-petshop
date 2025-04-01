@@ -65,9 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt->execute()) {
             header('Location: ' . NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&op=accessories');
-            echo '<pre>';
-            print_r($_POST);
-            echo '</pre>';
             exit();
             
         } else {
