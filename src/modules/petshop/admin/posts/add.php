@@ -17,6 +17,8 @@ $page_title = 'Thêm bài viết';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'] ?? '';
+    $description = $_POST['description'] ?? ''; // Lấy dữ liệu mô tả ngắn
+    $tags = $_POST['tags'] ?? ''; // Lấy dữ liệu tags
     $content = $_POST['content'] ?? '';
     $status = $_POST['status'] ?? 1;
     $created_at = time();
@@ -24,10 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!empty($title) && !empty($content)) {
         $stmt = $db->prepare('INSERT INTO ' . NV_PREFIXLANG . '_' . $module_data . '_posts 
-            (title, content, status, created_at, updated_at) 
-            VALUES (:title, :content, :status, :created_at, :updated_at)');
+            (title, description, tags, content, status, created_at, updated_at) 
+            VALUES (:title, :description, :tags, :content, :status, :created_at, :updated_at)');
 
         $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':tags', $tags, PDO::PARAM_STR);
         $stmt->bindParam(':content', $content, PDO::PARAM_STR);
         $stmt->bindParam(':status', $status, PDO::PARAM_INT);
         $stmt->bindParam(':created_at', $created_at, PDO::PARAM_INT);
