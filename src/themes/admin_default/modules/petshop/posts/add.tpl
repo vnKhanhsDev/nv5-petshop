@@ -9,10 +9,10 @@
         <label for="description">Mô tả ngắn</label>
         <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
     </div>
-    <div class="form-group">
-        <label for="image">Hình ảnh minh họa</label>
-        <input type="file" class="form-control" id="image" name="image">
-    </div>
+     <div class="form-group">
+         <label>Hình ảnh</label>
+         <input type="file" name="image">
+     </div>
     <div class="form-group">
         <label for="content">Nội dung bài viết</label>
         <textarea class="form-control" id="content" name="content" rows="10" required></textarea>

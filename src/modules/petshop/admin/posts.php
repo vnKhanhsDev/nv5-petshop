@@ -36,7 +36,7 @@ $generate_page = nv_generate_page($base_url, $total_rows, $per_page, $page);
 
 // Truy vấn danh sách bài viết có phân trang
 try {
-    $sql = 'SELECT id, title, description, image, content, views, likes, tags, status, updated_at, created_at FROM ' . NV_PREFIXLANG . '_petshop_posts ORDER BY id ASC LIMIT ' . $offset . ', ' . $per_page;
+    $sql = 'SELECT id, title, description, image, content, views, likes, tags, status, updated_at, created_at FROM ' . NV_PREFIXLANG . '_petshop_posts ORDER BY id DESC LIMIT ' . $offset . ', ' . $per_page;
     $stmt = $db->prepare($sql);
     $stmt->execute();
 } catch (PDOException $e) {

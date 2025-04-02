@@ -36,7 +36,8 @@ $post['updated_at'] = ($post['updated_at'] == 0 || $post['updated_at'] == '') ? 
 $post['status_text'] = ($post['status'] == 1) ? 'Hiển thị' : 'Ẩn';
 
 // Gửi dữ liệu sang template
-$xtpl = new XTemplate('detail.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
+$xtpl = new XTemplate('detail.tpl', NV_ROOTDIR . '/themes/admin_default/modules/petshop/posts');
+
 $xtpl->assign('POST', $post);
 $xtpl->assign('BACK_URL', NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=posts');
 

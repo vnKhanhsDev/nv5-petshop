@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <th>Hình ảnh</th>
-            <td><img src="{POST.image}" alt="Hình ảnh minh họa" class="img-fluid"></td>
+            <td><img  style="max-width: 200px; margin-top: 10px;" src="{POST.image}" alt="Hình ảnh minh họa" class="img-fluid"></td>
         </tr>
         <tr>
             <th>Nội dung</th>
