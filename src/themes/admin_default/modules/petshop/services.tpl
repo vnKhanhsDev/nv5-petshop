@@ -5,7 +5,7 @@
  
  <!-- BEGIN: main -->
  <div style="margin-bottom: 16px">
-    <a href="" class="btn btn-success">{LANG.add_service}</a>
+    <a href="{ADD_URL}" class="btn btn-success">{LANG.add_service}</a>
  </div>
  
 
@@ -25,11 +25,11 @@
              <tr>
                  <td>{ROW.id}</td>
                  <td>{ROW.name}</td>
-                 <td>{ROW.price}</td>
+                 <td>{ROW.price} VNĐ</td>
                  <td style="font-weight: bold;">{ROW.status_text}</td>
                  <td>
-                     <a href="" class="btn btn-success">Sửa</a>
-                     <a href="" class="btn btn-warning">Xoá</a>
+                     <a href="{ROW.edit_url}" class="btn btn-success">Sửa</a>
+                     <a href="{ROW.delete_url}" class="btn btn-warning">Xoá</a>
                  </td>
              </tr>
              <!-- END: loop -->

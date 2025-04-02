@@ -24,13 +24,15 @@ $sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_services ORDER 
  $xtpl->assign('LANG', \NukeViet\Core\Language::$lang_module);
  $xtpl->assign('GLANG', \NukeViet\Core\Language::$lang_global);
  
-//  $add_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=products/add';
-//  $xtpl->assign('ADD_URL', $add_url);
+ $add_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=services/add';
+ $xtpl->assign('ADD_URL', $add_url);
  
  if ($num) {
     foreach ($_rows as $key => $row) {
         // Xử lý trạng thái trước khi gán vào template
-        $row['status_text'] = ($row['status'] == 1) ? 'Hoạt động' : 'Dừng hoạt động';
+        $row['status_text'] = ($row['is_show'] == 1) ? 'Hoạt động' : 'Dừng hoạt động';
+        $row['delete_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=services/delete&id=' . $row['id'];
+        $row['edit_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=services/edit&id=' . $row['id'];
 
         // Gán dữ liệu vào template
         $xtpl->assign('ROW', $row);
