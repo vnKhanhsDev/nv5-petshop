@@ -19,6 +19,39 @@ $sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_accessory_types
 $types = $db->query($sql)->fetchAll();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    //Tải ảnh lên
+    $image_path = '';
+    $upload = new NukeViet\Files\Upload(
+            $admin_info['allow_files_type'], 
+            $global_config['forbid_extensions'], 
+            $global_config['forbid_mimes'], 
+            NV_UPLOAD_MAX_FILESIZE, 
+            NV_MAX_WIDTH, 
+            NV_MAX_HEIGHT
+        );
+
+        // Thiết lập ngôn ngữ
+        $upload->setLanguage($lang_global);
+
+        // Xác định thư mục lưu ảnh
+        $target_dir = NV_UPLOADS_REAL_DIR . '/' . $module_name . '/accessories/';
+        if (!is_dir($target_dir)) {
+            mkdir($target_dir, 0777, true); // Tạo thư mục nếu chưa có
+        }
+
+        // Tải file lên server
+        $upload_info = $upload->save_file($_FILES['image'], $target_dir, false, $global_config['nv_auto_resize']);
+
+        // Kiểm tra lỗi upload
+        if (!empty($upload_info['error'])) {
+            die('Lỗi upload file: ' . $upload_info['error']);
+        } else {
+            // Đường dẫn ảnh đã upload
+            $image_path = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/accessories/' . $upload_info['basename'];
+        }
+
+
     $name = $_POST['name'] ?? '';
     $type_id = $_POST['type_id'] ?? 0;
     $brand = $_POST['brand'] ?? '';
@@ -32,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stock = $_POST['stock'] ?? 0;
     $tags = isset($_POST['tags']) ? implode(',', $_POST['tags']) : ''; // Chuyển mảng thành chuỗi
     $description = $_POST['description'] ?? '';
-    $image = $_POST['image'] ?? '';
+    $image = $image_path ?? '';
     $is_show = $_POST['is_show'] ?? 0;
     $rating = 0; // Giá trị mặc định
     $created_at = time();
@@ -84,6 +117,8 @@ foreach ($types as $type_list) {
     $xtpl->assign('TYPE_NAME', htmlspecialchars($type_list['name']));
     $xtpl->parse('main.type');
 }
+$xtpl->assign('SAVE_URL', NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA 
+     . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&op=accessories/add');
 $xtpl->parse('main');
 $contents = $xtpl->text('main');
 
