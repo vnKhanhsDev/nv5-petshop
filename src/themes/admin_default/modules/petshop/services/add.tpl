@@ -1,5 +1,5 @@
 <!-- BEGIN: add -->
- <form action="" method="post">
+ <form action="{SAVE_URL}" method="post" enctype="multipart/form-data">
      <div class="form-group">
          <label>Tên dịch vụ</label>
          <input type="text" name="name" class="form-control" required>
@@ -26,7 +26,7 @@
      </div>
      <div class="form-group">
          <label>Hình ảnh</label>
-         <input type="text" name="image" class="form-control">
+         <input type="file" name="image">
      </div>
      <div class="form-group">
          <label>Trạng thái</label>
