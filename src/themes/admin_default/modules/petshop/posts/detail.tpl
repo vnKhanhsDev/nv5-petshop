@@ -1,6 +1,6 @@
 <!-- BEGIN: main -->
 <div class="container">
-    <h2>Chi tiết bài viết</h2>
+
     
     <table class="table table-bordered">
         <tr>
