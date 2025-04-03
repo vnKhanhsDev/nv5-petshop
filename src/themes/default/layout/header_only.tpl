@@ -6,7 +6,11 @@
         <!-- END: metatags -->
         <link rel="shortcut icon" href="{SITE_FAVICON}">
         <!-- BEGIN: links -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link<!-- BEGIN: attr --> {LINKS.key}<!-- BEGIN: val -->="{LINKS.value}"<!-- END: val --><!-- END: attr -->>
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/default/css/bootstrap_petshop.css">
+        <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/default/css/slick.css">
+
         <!-- END: links -->
         <!-- BEGIN: js -->
         <script<!-- BEGIN: ext --> src="{JS_SRC}"<!-- END: ext -->><!-- BEGIN: int -->{JS_CONTENT}<!-- END: int --></script>

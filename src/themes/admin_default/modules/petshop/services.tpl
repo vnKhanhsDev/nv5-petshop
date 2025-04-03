@@ -28,12 +28,18 @@
                  <td>{ROW.price} VNĐ</td>
                  <td style="font-weight: bold;">{ROW.status_text}</td>
                  <td>
-                     <a href="{ROW.edit_url}" class="btn btn-success">Sửa</a>
-                     <a href="{ROW.delete_url}" class="btn btn-warning">Xoá</a>
+                    <a href="{ROW.detail_url}" class="btn btn-primary">Chi tiết</a>
+                    <a href="{ROW.edit_url}" class="btn btn-success">Sửa</a>
+                    <a href="{ROW.delete_url}" class="btn btn-warning" onclick="return confirmDelete()">Xoá</a>
                  </td>
              </tr>
              <!-- END: loop -->
          </tbody>
      </table>
  </div>
+<script>
+function confirmDelete() {
+    return confirm('Bạn chắc chắn muốn xóa dịch vụ này?');
+}
+</script>
  <!-- END: main -->

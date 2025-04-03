@@ -13,7 +13,7 @@
      exit('Stop!!!');
  }
  
- $page_title = $nv_Lang->getModule('edit_service');
+ $page_title = $nv_Lang->getModule('detail_service');
  
  $service_id = $_GET['id'] ?? 0;
  
@@ -31,10 +31,11 @@
      die('ID dịch vụ không hợp lệ.');
  }
 
-
   // Load template
-  $xtpl = new XTemplate('edit.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file . '/services/');
+  $xtpl = new XTemplate('detail.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file . '/services/');
   $xtpl->assign('SERVICE', $service);
+  $xtpl->assign('BACK_URL', NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA 
+  . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&op=services');
   $xtpl->parse('detail');
   $contents = $xtpl->text('detail');
   

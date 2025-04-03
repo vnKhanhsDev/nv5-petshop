@@ -33,6 +33,45 @@
  
  // Nếu người dùng submit form (POST request)
  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_services 
+         SET name = :name, price = :price, discount = :discount, estimated_time = :estimated_time, requires_appointment = :requires_appointment, description = :description, is_show = :is_show 
+         WHERE id = :id';
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+        $image_path = '';
+        $upload = new NukeViet\Files\Upload(
+                $admin_info['allow_files_type'], 
+                $global_config['forbid_extensions'], 
+                $global_config['forbid_mimes'], 
+                NV_UPLOAD_MAX_FILESIZE, 
+                NV_MAX_WIDTH, 
+                NV_MAX_HEIGHT
+            );
+    
+        // Thiết lập ngôn ngữ
+        $upload->setLanguage($lang_global);
+    
+        // Xác định thư mục lưu ảnh
+        $target_dir = NV_UPLOADS_REAL_DIR . '/' . $module_name . '/services/';
+        if (!is_dir($target_dir)) {
+            mkdir($target_dir, 0777, true); // Tạo thư mục nếu chưa có
+        }
+    
+        // Tải file lên server
+        $upload_info = $upload->save_file($_FILES['image'], $target_dir, false, $global_config['nv_auto_resize']);
+    
+        // Kiểm tra lỗi upload
+        if (!empty($upload_info['error'])) {
+            die('Lỗi upload file: ' . $upload_info['error']);
+        } else {
+            // Đường dẫn ảnh đã upload
+            $image_path = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/services/' . $upload_info['basename'];
+        }
+        $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_services 
+         SET name = :name, price = :price, discount = :discount, estimated_time = :estimated_time, requires_appointment = :requires_appointment, description = :description, image = :image, is_show = :is_show 
+         WHERE id = :id';
+    }
+
+
      $name = trim($_POST['name']);
      $price = floatval($_POST['price']);
      $discount = intval($_POST['discount']);
@@ -40,15 +79,13 @@
      $requires_appointment = intval($_POST['requires_appointment']);
      $description = trim($_POST['description']);
      $is_show = intval($_POST['is_show']);
- 
+     $image = $image_path ?? '';
      if ($name == '' || $price <= 0 || $quantity < 0) {
          die('Dữ liệu không hợp lệ.');
      }
  
      // Cập nhật sản phẩm vào database
-     $stmt = $db->prepare('UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_services 
-         SET name = :name, price = :price, discount = :discount, estimated_time = :estimated_time, requires_appointment = :requires_appointment, description = :description, is_show = :is_show 
-         WHERE id = :id');
+     $stmt = $db->prepare($sql);
  
      $stmt->bindParam(':name', $name, PDO::PARAM_STR);
      $stmt->bindParam(':price', $price, PDO::PARAM_STR);
@@ -56,6 +93,9 @@
      $stmt->bindParam(':estimated_time', $estimated_time, PDO::PARAM_INT);
      $stmt->bindParam(':requires_appointment', $requires_appointment, PDO::PARAM_INT);
      $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+        $stmt->bindParam(':image', $image, PDO::PARAM_STR);
+    }
      $stmt->bindParam(':is_show', $is_show, PDO::PARAM_INT);
      $stmt->bindParam(':id', $service_id, PDO::PARAM_INT);
  

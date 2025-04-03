@@ -22,6 +22,11 @@
      $stmt->execute();
      
      if ($stmt->fetchColumn() > 0) {
+        $stmt = $db->prepare('SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_services WHERE id = :id');
+        $stmt->bindParam(':id', $service_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $service = $stmt->fetch();
+        unlink($service['image']);
          // Xóa sản phẩm
          $stmt = $db->prepare('DELETE FROM ' . NV_PREFIXLANG . '_' . $module_data . '_services WHERE id = :id');
          $stmt->bindParam(':id', $service_id, PDO::PARAM_INT);

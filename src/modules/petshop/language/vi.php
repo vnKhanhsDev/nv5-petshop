@@ -26,4 +26,5 @@ $lang_module['orders'] = 'Quản lý đơn hàng';
 $lang_module['customers'] = 'Quản lý khách hàng';
 $lang_module['add_service'] = 'Thêm dịch vụ';
 $lang_module['edit_service'] = 'Chỉnh sửa dịch vụ';
+$lang_module['detail_service'] = 'Thông tin dịch vụ';
 $lang_module['posts'] = 'Quản lý bài viết';

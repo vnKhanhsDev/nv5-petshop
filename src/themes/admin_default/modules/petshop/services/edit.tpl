@@ -1,5 +1,5 @@
 <!-- BEGIN: edit -->
- <form action="{SAVE_URL}" method="post">
+ <form action="{SAVE_URL}" method="post" enctype="multipart/form-data" onsubmit="return confirmSaveChanges()">
      <div class="form-group">
          <label for="name">Tên dịch vụ</label>
          <input type="text" class="form-control" id="name" name="name" value="{SERVICE.name}" required>
@@ -31,7 +31,23 @@
              <option value="0" {IF SERVICE.is_show == 0}selected{/IF}>Hết hàng</option>
          </select>
      </div>
+     <div class="form-group">
+        <label for="is_show">Hình ảnh</label>
+        <img src="{SERVICE.image}" alt="{SERVICE.title}" width="200" >
+        <input style="margin-top: 8px;" type="file" name="image">
+    </div>
      <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
      <a href="javascript:history.back()" class="btn btn-secondary">Hủy</a>
  </form>
+ <script>
+function confirmSaveChanges() {
+    // Hiển thị alert xác nhận
+    var result = confirm('Bạn có chắc chắn muốn lưu thay đổi?');
+    if (result) {
+        return true;  // Tiếp tục gửi form nếu người dùng chọn "OK"
+    } else {
+        return false; // Hủy gửi form nếu người dùng chọn "Cancel"
+    }
+}
+</script>
  <!-- END: edit -->

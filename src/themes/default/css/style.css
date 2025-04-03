@@ -1031,21 +1031,10 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857;
-    background-color: #eeeeee;
+    background-color: white;
 }
 
-a,
-a:link,
-a:active,
-a:visited {
-    color: #1a3f5e;
-}
 
-a:hover,
-a:focus {
-    text-decoration: none;
-    color: #0e2132;
-}
 
 a.dimgray {
     color: #707070;

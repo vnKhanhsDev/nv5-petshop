@@ -33,7 +33,7 @@ $sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_services ORDER 
         $row['status_text'] = ($row['is_show'] == 1) ? 'Hoạt động' : 'Dừng hoạt động';
         $row['delete_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=services/delete&id=' . $row['id'];
         $row['edit_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=services/edit&id=' . $row['id'];
-
+        $row['detail_url'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=services/detail&id=' . $row['id'];
         // Gán dữ liệu vào template
         $xtpl->assign('ROW', $row);
         $xtpl->parse('main.loop');
