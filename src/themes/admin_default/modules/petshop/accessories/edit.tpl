@@ -1,5 +1,5 @@
 <!-- BEGIN: main -->
-<form action="" method="post">
+<form action="{SAVE_URL}" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label>Tên phụ kiện <span style="color: red;">*</span></label>
         <input type="text" name="name" class="form-control" value="{name}" required>
@@ -81,7 +81,7 @@
 
     <div class="form-group">
         <label>Hình ảnh phụ kiện</label>
-        <input type="text" name="image" class="form-control" value="{image}">
+        <input type="file" name="image">
     </div>
 
     <div class="form-group">
