@@ -13,18 +13,22 @@ if (!defined('NV_IS_FILE_ADMIN')) {
     exit('Stop!!!');
 }
 
-$page_title = 'Thêm sản phẩm';
+$page_title = $nv_Lang->getModule('add_pet');
 
 // Lấy danh sách loài và giống
-$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_species';
-$specie_list = $db->query($sql)->fetchAll();
+$sql = 'SELECT id, name FROM ' . NV_PREFIXLANG . '_' . $module_data . '_species';
+$species = $db->query($sql)->fetchAll();
 
-$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_breeds';
+$sql = 'SELECT id, name, species_id FROM ' . NV_PREFIXLANG . '_' . $module_data . '_breeds';
 $breeds = $db->query($sql)->fetchAll();
+
+// Lấy ID cuối cùng
+$sql = 'SELECT id FROM ' . NV_PREFIXLANG . '_' . $module_data . '_pets ORDER BY id DESC LIMIT 1';
+$last_id = $db->query($sql)->fetchColumn();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
-    $specie_id = $_POST['specie_id'] ?? 0;
+    $specie_id = $_POST['species_id'] ?? 0;
     $breed_id = $_POST['breed_id'] ?? 0;
     $gender = $_POST['gender'] ?? '';
     $age = $_POST['age'] ?? 0;
@@ -36,19 +40,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = $_POST['price'] ?? 0;
     $discount = $_POST['discount'] ?? 0;
     $stock = $_POST['stock'] ?? 0;
-    $tags = isset($_POST['tags']) ? implode(',', $_POST['tags']) : ''; // Chuyển mảng thành chuỗi
+    $tags = isset($_POST['tags']) ? implode(',', $_POST['tags']) : '';
     $description = $_POST['description'] ?? '';
-    $image = $_POST['image'] ?? '';
+
+    // start: Xử lý ảnh gửi từ form
+    $image_urls = [];
+    if (!empty($_FILES['image']['name'][0])) {
+        $upload_dir = NV_ROOTDIR . '/uploads/' . $module_name . '/pets/';
+
+        foreach($_FILES['image']['name'] as $key => $filename) {
+            $tmp_name = $_FILES['image']['tmp_name'][$key];
+            $new_name = uniqid() . '_' . basename($filename);
+            $target_file = $upload_dir . $new_name;
+
+            if (move_uploaded_file($tmp_name, $target_file)) {
+                $image_urls[] = $target_file;
+            }
+        }
+    }
+    $images = implode(',', $image_urls);
+    // end: Xử lý ảnh gửi từ form
+
     $status = $_POST['status'] ?? 0;
-    $rating = 0; // Giá trị mặc định
+    $rating = 0;
     $created_at = time();
     $updated_at = time();
 
     if (!empty($name) && $specie_id !== 0 && $breed_id !== 0) {
         $sql  = 'INSERT INTO ' . NV_PREFIXLANG . '_' . $module_data . '_pets 
-                (`name`, `species_id`, `breed_id`, `gender`, `age`, `fur_color`, `weight`, `origin`, `is_vaccinated`, `vaccination_details`, `price`, `discount`, `stock`, `tags`, `rating`, `description`, `image`, `is_show`, `created_at`, `updated_at`) 
+                (`name`, `species_id`, `breed_id`, `gender`, `age`, `fur_color`, `weight`, `origin`, `is_vaccinated`, `vaccination_details`, `price`, `discount`, `stock`, `tags`, `rating`, `description`, `images`, `status`, `created_at`, `updated_at`) 
                 VALUES 
-                (:name, :species_id, :breed_id, :gender, :age, :fur_color, :weight, :origin, :is_vaccinated, :vaccination_details, :price, :discount, :stock, :tags, :rating, :description, :image, :is_show, :created_at, :updated_at)';
+                (:name, :species_id, :breed_id, :gender, :age, :fur_color, :weight, :origin, :is_vaccinated, :vaccination_details, :price, :discount, :stock, :tags, :rating, :description, :images, :status, :created_at, :updated_at)';
         $stmt = $db->prepare($sql);
 
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
@@ -67,8 +89,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':tags', $tags, PDO::PARAM_STR);
         $stmt->bindParam(':rating', $rating, PDO::PARAM_INT);
         $stmt->bindParam(':description', $description, PDO::PARAM_STR);
-        $stmt->bindParam(':image', $image, PDO::PARAM_STR);
-        $stmt->bindParam(':is_show', $status, PDO::PARAM_INT);
+        $stmt->bindParam(':images', $images, PDO::PARAM_STR);
+        $stmt->bindParam(':status', $status, PDO::PARAM_INT);
         $stmt->bindParam(':created_at', $created_at, PDO::PARAM_INT);
         $stmt->bindParam(':updated_at', $updated_at, PDO::PARAM_INT);
 
@@ -83,20 +105,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Load giao diện add.tpl
-$xtpl = new XTemplate('add.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file . '/pets/');
+// Load giao diện để thêm thú cưng
+$xtpl = new XTemplate('pet_form.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file . '/pets/');
 $xtpl->assign('LANG', \NukeViet\Core\Language::$lang_module);
+$xtpl->assign('ACTION', 'add');
+$xtpl->assign('NEW_PET_ID', $last_id + 1);
 
-foreach ($specie_list as $specie) {
+foreach ($species as $specie) {
     $xtpl->assign('SPECIE_ID', $specie['id']);
-    $xtpl->assign('SPECIE_NAME', htmlspecialchars($specie['name']));
+    $xtpl->assign('SPECIE_NAME', $specie['name']);
     $xtpl->parse('main.specie');
 }
 
 foreach ($breeds as $breed) {
     $xtpl->assign('BREED_ID', $breed['id']);
-    $xtpl->assign('BREED_NAME', htmlspecialchars($breed['name']));
-    $xtpl->assign('SPECIE_ID', $breed['species_id']); // Thêm SPECIE_ID để lọc sau này
+    $xtpl->assign('BREED_NAME', $breed['name']);
+    $xtpl->assign('SPECIE_ID', $breed['species_id']);
     $xtpl->parse('main.breed');
 }
 
