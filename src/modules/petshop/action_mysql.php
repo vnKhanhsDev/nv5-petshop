@@ -164,16 +164,16 @@ $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "
 $sql_create_module[] = "INSERT INTO `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_accessories` 
 (`name`, `type_id`, `brand`, `material`, `origin`, `expiration_date`, `color`, `size`, `price`, `discount`, `stock`, `tags`, `rating`, `description`, `image`, `is_show`, `created_at`, `updated_at`)
 VALUES
-('Dây dắt thú cưng cao cấp', 1, 'PetLeashPro', 'Nylon', 'Việt Nam', NULL, 'Đỏ', 'M', 150000, 10, 50, 'new', 4.8, 'Dây dắt bền, chịu lực tốt.', 'leash1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Dây dắt tự động 5m', 1, 'Flexi', 'Nhựa ABS', 'Đức', NULL, 'Đen', 'L', 300000, 15, 30, 'hot', 4.5, 'Dây dắt tự động thu gọn.', 'leash2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Áo hoodie cho chó', 2, 'PetFashion', 'Vải cotton', 'Trung Quốc', NULL, 'Xanh dương', 'XL', 250000, 5, 40, 'best-seller', 4.6, 'Áo hoodie ấm áp cho chó.', 'clothes1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Áo len mùa đông', 2, 'WinterPets', 'Len', 'Việt Nam', NULL, 'Đỏ', 'M', 180000, 10, 35, 'new', 4.7, 'Áo len mềm mại, giữ ấm tốt.', 'clothes2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Thức ăn hạt cho mèo 1kg', 3, 'MeowMix', 'Thịt gà, cá hồi', 'Mỹ', '2025-12-31', NULL, '1kg', 220000, 8, 60, 'best-seller', 4.9, 'Thức ăn giàu dinh dưỡng cho mèo.', 'food1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Bánh thưởng cho chó', 3, 'DogJoy', 'Thịt bò sấy', 'Pháp', '2026-06-15', NULL, '500g', 150000, 12, 50, 'hot', 4.8, 'Bánh thưởng giúp răng chắc khỏe.', 'food2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Bóng cao su cho chó', 4, 'DogFun', 'Cao su tự nhiên', 'Việt Nam', NULL, 'Vàng', 'M', 90000, 5, 100, 'new', 4.4, 'Bóng chơi giúp rèn luyện cơ hàm.', 'toy1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Chuột bông cho mèo', 4, 'CatPlay', 'Vải + bông', 'Trung Quốc', NULL, 'Xám', 'S', 75000, 0, 80, 'hot', 4.3, 'Chuột bông kích thích bản năng săn mồi.', 'toy2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cát vệ sinh cho mèo 5kg', 7, 'CatCare', 'Bentonite', 'Thái Lan', NULL, 'Trắng', '5kg', 250000, 10, 40, 'hot', 4.6, 'Cát vón cục, khử mùi tốt.', 'litter1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cát thủy tinh cho mèo 3kg', 7, 'CrystalCat', 'Silica gel', 'Hàn Quốc', NULL, 'Xanh nhạt', '3kg', 300000, 12, 25, 'best-seller', 4.8, 'Cát vệ sinh khử mùi cực mạnh.', 'litter2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
+('Dây dắt thú cưng cao cấp', 1, 'PetLeashPro', 'Nylon', 'Việt Nam', NULL, 'Đỏ', 'M', 150000, 10, 50, 'new', 4.8, 'Dây dắt bền, chịu lực tốt.', '/nv5-petshop/src/uploads/petshop/accessories/day-dat.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Dây dắt tự động 5m', 1, 'Flexi', 'Nhựa ABS', 'Đức', NULL, 'Đen', 'L', 300000, 15, 30, 'hot', 4.5, 'Dây dắt tự động thu gọn.', '/nv5-petshop/src/uploads/petshop/accessories/day-dat-tu-dong.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Áo hoodie cho chó', 2, 'PetFashion', 'Vải cotton', 'Trung Quốc', NULL, 'Xanh dương', 'XL', 250000, 5, 40, 'best-seller', 4.6, 'Áo hoodie ấm áp cho chó.', '/nv5-petshop/src/uploads/petshop/accessories/82a0c771f65235ae73a63ee02c08b19a.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Áo len mùa đông', 2, 'WinterPets', 'Len', 'Việt Nam', NULL, 'Đỏ', 'M', 180000, 10, 35, 'new', 4.7, 'Áo len mềm mại, giữ ấm tốt.', '/nv5-petshop/src/uploads/petshop/accessories/vn-11134207-7r98o-lpticdysyud31c.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Thức ăn hạt cho mèo 1kg', 3, 'MeowMix', 'Thịt gà, cá hồi', 'Mỹ', '2025-12-31', NULL, '1kg', 220000, 8, 60, 'best-seller', 4.9, 'Thức ăn giàu dinh dưỡng cho mèo.', '/nv5-petshop/src/uploads/petshop/accessories/hat-1kg.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Bánh thưởng cho chó', 3, 'DogJoy', 'Thịt bò sấy', 'Pháp', '2026-06-15', NULL, '500g', 150000, 12, 50, 'hot', 4.8, 'Bánh thưởng giúp răng chắc khỏe.', '/nv5-petshop/src/uploads/petshop/accessories/9-banh-thuong-cho-cho-meo-luscious-ho-tro-trong-qua-trinh-huan-luyen-220g-1-1510x2013.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Bóng cao su cho chó', 4, 'DogFun', 'Cao su tự nhiên', 'Việt Nam', NULL, 'Vàng', 'M', 90000, 5, 100, 'new', 4.4, 'Bóng chơi giúp rèn luyện cơ hàm.', '/nv5-petshop/src/uploads/petshop/accessories/bong-cao-su_1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Chuột bông cho mèo', 4, 'CatPlay', 'Vải + bông', 'Trung Quốc', NULL, 'Xám', 'S', 75000, 0, 80, 'hot', 4.3, 'Chuột bông kích thích bản năng săn mồi.', '/nv5-petshop/src/uploads/petshop/accessories/chuot-bong.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cát vệ sinh cho mèo 5kg', 7, 'CatCare', 'Bentonite', 'Thái Lan', NULL, 'Trắng', '5kg', 250000, 10, 40, 'hot', 4.6, 'Cát vón cục, khử mùi tốt.', '/nv5-petshop/src/uploads/petshop/accessories/cat-thuy-tinh-cho-meo-kitcat-600x600.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cát thủy tinh cho mèo 3kg', 7, 'CrystalCat', 'Silica gel', 'Hàn Quốc', NULL, 'Xanh nhạt', '3kg', 300000, 12, 25, 'best-seller', 4.8, 'Cát vệ sinh khử mùi cực mạnh.', '/nv5-petshop/src/uploads/petshop/accessories/cat-thuy-tinh-cho-meo-kitcat-600x600.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
 
 // Table: Services (Danh sách các dịch vụ)
 $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data ."_services` (
