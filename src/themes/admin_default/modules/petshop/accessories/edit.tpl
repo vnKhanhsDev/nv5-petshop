@@ -61,16 +61,16 @@
     </div>
 
     <div class="form-group">
-        <label>Tags</label>
-        <div>
+        <label>Nhãn</label>
+        <div id="tags-select">
             <label class="checkbox-inline">
-                <input type="checkbox" name="tags[]" value="new" {if in_array('new', $tags)}checked{/if}> New
+                <input type="checkbox" name="tags[]" value="new"> New
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" name="tags[]" value="hot" {if in_array('hot', $tags)}checked{/if}> Hot
+                <input type="checkbox" name="tags[]" value="hot"> Hot
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" name="tags[]" value="best-seller" {if in_array('best-seller', $tags)}checked{/if}> Best Seller
+                <input type="checkbox" name="tags[]" value="best-seller"> Best Seller
             </label>
         </div>
     </div>
@@ -97,6 +97,14 @@
     
     <!-- Nút Cập nhật -->
     <button type="submit" class="btn btn-primary">Cập nhật</button>
-    
 </form>
+<script>
+     let selectedTags = '{ACCESSORY.tags}'.split(',');
+        document.querySelectorAll('input[name="tags[]"]').forEach(checkbox => {
+            if (selectedTags.includes(checkbox.value)) {
+                checkbox.checked = true;
+            }
+        });
+</script>
 <!-- END: main -->
+ 

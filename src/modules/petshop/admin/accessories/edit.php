@@ -125,7 +125,7 @@ foreach ($types as $type_list) {
     // Parse phần type trong template
     $xtpl->parse('main.type');
 }
-
+    
 // Chia chuỗi tags thành mảng
 
 $type_name = '';
@@ -135,8 +135,6 @@ foreach ($types as $type_list) {
         break; // Thoát khỏi vòng lặp khi tìm thấy
     }
 }
-$tags = explode(',', $accessory['tags']);  
-
 $xtpl->assign('name', $accessory['name']);  
 $xtpl->assign('type_id', $accessory['type_id']); 
 $xtpl->assign('type_name', htmlspecialchars($type_name)); 
@@ -152,7 +150,8 @@ $xtpl->assign('stock', $accessory['stock']);
 $xtpl->assign('description', $accessory['description']);
 $xtpl->assign('image', $accessory['image']);
 $xtpl->assign('is_show', $accessory['is_show']);
-$xtpl->assign('tags', $tags);
+$xtpl->assign('tags', $accessory['tags']);
+$xtpl->assign('ACCESSORY', $accessory);  
 
 // Parse giao diện
 $xtpl->parse('main');
