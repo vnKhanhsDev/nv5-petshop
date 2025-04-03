@@ -1,5 +1,4 @@
 <!-- BEGIN: edit -->
-<h2>Chỉnh sửa bài viết</h2>
 <form action="{SAVE_URL}" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="title">Tiêu đề bài viết</label>

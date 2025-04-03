@@ -1,6 +1,5 @@
 <!-- BEGIN: main -->
 <div class="table-responsive">
-    <h2>Danh sách bài viết</h2>
     
     <!-- Nút tạo bài viết -->
     <div class="mb-3">
