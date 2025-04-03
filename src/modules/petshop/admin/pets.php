@@ -32,7 +32,10 @@ $generate_page = nv_generate_page($base_url, $total_rows, $per_page, $page);
 
 // Lấy dữ liệu fill vào trang hiện tại
 $offset = ($page - 1) * $per_page;  // Vị trí bắt đầu lấy dữ liệu
-$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_pets ORDER BY id DESC LIMIT ' . $offset . ', ' . $per_page;
+$sql = 'SELECT p.*, s.name AS specie_name, b.name AS breed_name FROM ' . NV_PREFIXLANG . '_' . $module_data . '_pets p
+        LEFT JOIN ' . NV_PREFIXLANG . '_' . $module_data . '_species s ON p.species_id = s.id
+        LEFT JOIN ' . NV_PREFIXLANG . '_' . $module_data . '_breeds b ON p.breed_id = b.id
+        ORDER BY p.id DESC LIMIT ' . $offset . ', ' . $per_page;
 $_rows = $db->query($sql)->fetchAll();
 
 $xtpl = new XTemplate('pets.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
@@ -43,7 +46,11 @@ $xtpl->assign('ADD_URL', $base_url . '/add');
 if (!empty($_rows)) {
     foreach ($_rows as $row) {
         $row['detail_url'] = $base_url . '/detail&id=' . $row['id'];
+        $row['edit_url'] = $base_url . '/edit&id=' . $row['id'];
         $row['delete_url'] = $base_url . '/delete&id=' . $row['id'];
+
+        $row['gender'] = $row['gender'] === 'male' ? 'Đực' : 'Cái';
+        $row['status'] = $row['status'] === 1 ? 'Hiện' : 'Ẩn';
 
         $xtpl->assign('ROW', $row);
         $xtpl->parse('main.loop');
