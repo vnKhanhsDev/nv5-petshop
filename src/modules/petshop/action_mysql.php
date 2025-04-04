@@ -164,16 +164,16 @@ $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "
 $sql_create_module[] = "INSERT INTO `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_accessories` 
 (`name`, `type_id`, `brand`, `material`, `origin`, `expiration_date`, `color`, `size`, `price`, `discount`, `stock`, `tags`, `rating`, `description`, `image`, `is_show`, `created_at`, `updated_at`)
 VALUES
-('Dây dắt thú cưng cao cấp', 1, 'PetLeashPro', 'Nylon', 'Việt Nam', NULL, 'Đỏ', 'M', 150000, 10, 50, 'new', 4.8, 'Dây dắt bền, chịu lực tốt.', 'leash1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Dây dắt tự động 5m', 1, 'Flexi', 'Nhựa ABS', 'Đức', NULL, 'Đen', 'L', 300000, 15, 30, 'hot', 4.5, 'Dây dắt tự động thu gọn.', 'leash2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Áo hoodie cho chó', 2, 'PetFashion', 'Vải cotton', 'Trung Quốc', NULL, 'Xanh dương', 'XL', 250000, 5, 40, 'best-seller', 4.6, 'Áo hoodie ấm áp cho chó.', 'clothes1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Áo len mùa đông', 2, 'WinterPets', 'Len', 'Việt Nam', NULL, 'Đỏ', 'M', 180000, 10, 35, 'new', 4.7, 'Áo len mềm mại, giữ ấm tốt.', 'clothes2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Thức ăn hạt cho mèo 1kg', 3, 'MeowMix', 'Thịt gà, cá hồi', 'Mỹ', '2025-12-31', NULL, '1kg', 220000, 8, 60, 'best-seller', 4.9, 'Thức ăn giàu dinh dưỡng cho mèo.', 'food1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Bánh thưởng cho chó', 3, 'DogJoy', 'Thịt bò sấy', 'Pháp', '2026-06-15', NULL, '500g', 150000, 12, 50, 'hot', 4.8, 'Bánh thưởng giúp răng chắc khỏe.', 'food2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Bóng cao su cho chó', 4, 'DogFun', 'Cao su tự nhiên', 'Việt Nam', NULL, 'Vàng', 'M', 90000, 5, 100, 'new', 4.4, 'Bóng chơi giúp rèn luyện cơ hàm.', 'toy1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Chuột bông cho mèo', 4, 'CatPlay', 'Vải + bông', 'Trung Quốc', NULL, 'Xám', 'S', 75000, 0, 80, 'hot', 4.3, 'Chuột bông kích thích bản năng săn mồi.', 'toy2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cát vệ sinh cho mèo 5kg', 7, 'CatCare', 'Bentonite', 'Thái Lan', NULL, 'Trắng', '5kg', 250000, 10, 40, 'hot', 4.6, 'Cát vón cục, khử mùi tốt.', 'litter1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cát thủy tinh cho mèo 3kg', 7, 'CrystalCat', 'Silica gel', 'Hàn Quốc', NULL, 'Xanh nhạt', '3kg', 300000, 12, 25, 'best-seller', 4.8, 'Cát vệ sinh khử mùi cực mạnh.', 'litter2.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
+('Dây dắt thú cưng cao cấp', 1, 'PetLeashPro', 'Nylon', 'Việt Nam', NULL, 'Đỏ', 'M', 150000, 10, 50, 'new', 4.8, 'Dây dắt bền, chịu lực tốt.', '/nv5-petshop/src/uploads/petshop/accessories/day-dat.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Dây dắt tự động 5m', 1, 'Flexi', 'Nhựa ABS', 'Đức', NULL, 'Đen', 'L', 300000, 15, 30, 'hot', 4.5, 'Dây dắt tự động thu gọn.', '/nv5-petshop/src/uploads/petshop/accessories/day-dat-tu-dong.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Áo hoodie cho chó', 2, 'PetFashion', 'Vải cotton', 'Trung Quốc', NULL, 'Xanh dương', 'XL', 250000, 5, 40, 'best-seller', 4.6, 'Áo hoodie ấm áp cho chó.', '/nv5-petshop/src/uploads/petshop/accessories/82a0c771f65235ae73a63ee02c08b19a.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Áo len mùa đông', 2, 'WinterPets', 'Len', 'Việt Nam', NULL, 'Đỏ', 'M', 180000, 10, 35, 'new', 4.7, 'Áo len mềm mại, giữ ấm tốt.', '/nv5-petshop/src/uploads/petshop/accessories/vn-11134207-7r98o-lpticdysyud31c.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Thức ăn hạt cho mèo 1kg', 3, 'MeowMix', 'Thịt gà, cá hồi', 'Mỹ', '2025-12-31', NULL, '1kg', 220000, 8, 60, 'best-seller', 4.9, 'Thức ăn giàu dinh dưỡng cho mèo.', '/nv5-petshop/src/uploads/petshop/accessories/hat-1kg.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Bánh thưởng cho chó', 3, 'DogJoy', 'Thịt bò sấy', 'Pháp', '2026-06-15', NULL, '500g', 150000, 12, 50, 'hot', 4.8, 'Bánh thưởng giúp răng chắc khỏe.', '/nv5-petshop/src/uploads/petshop/accessories/9-banh-thuong-cho-cho-meo-luscious-ho-tro-trong-qua-trinh-huan-luyen-220g-1-1510x2013.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Bóng cao su cho chó', 4, 'DogFun', 'Cao su tự nhiên', 'Việt Nam', NULL, 'Vàng', 'M', 90000, 5, 100, 'new', 4.4, 'Bóng chơi giúp rèn luyện cơ hàm.', '/nv5-petshop/src/uploads/petshop/accessories/bong-cao-su_1.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Chuột bông cho mèo', 4, 'CatPlay', 'Vải + bông', 'Trung Quốc', NULL, 'Xám', 'S', 75000, 0, 80, 'hot', 4.3, 'Chuột bông kích thích bản năng săn mồi.', '/nv5-petshop/src/uploads/petshop/accessories/chuot-bong.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cát vệ sinh cho mèo 5kg', 7, 'CatCare', 'Bentonite', 'Thái Lan', NULL, 'Trắng', '5kg', 250000, 10, 40, 'hot', 4.6, 'Cát vón cục, khử mùi tốt.', '/nv5-petshop/src/uploads/petshop/accessories/cat-thuy-tinh-cho-meo-kitcat-600x600.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cát thủy tinh cho mèo 3kg', 7, 'CrystalCat', 'Silica gel', 'Hàn Quốc', NULL, 'Xanh nhạt', '3kg', 300000, 12, 25, 'best-seller', 4.8, 'Cát vệ sinh khử mùi cực mạnh.', '/nv5-petshop/src/uploads/petshop/accessories/cat-thuy-tinh-cho-meo-kitcat-600x600.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
 
 // Table: Services (Danh sách các dịch vụ)
 $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data ."_services` (
@@ -195,21 +195,21 @@ $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "
 $sql_create_module[] = "INSERT INTO `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_services` 
 (`name`, `price`, `discount`, `estimated_time`, `requires_appointment`, `rating`, `description`, `image`, `is_show`, `created_at`, `updated_at`)
 VALUES
-('Tắm cho chó nhỏ', 150000, 5, 30, 0, 4.7, 'Dịch vụ tắm rửa cho chó dưới 10kg, sử dụng dầu gội chuyên dụng.', 'bath_small_dog.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tắm cho chó lớn', 250000, 10, 45, 0, 4.6, 'Dịch vụ tắm rửa cho chó trên 10kg, chăm sóc da lông.', 'bath_large_dog.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cắt tỉa lông chó', 200000, 5, 40, 1, 4.8, 'Dịch vụ cắt tỉa lông theo yêu cầu, giữ cho thú cưng luôn sạch sẽ.', 'dog_grooming.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cắt tỉa lông mèo', 180000, 5, 35, 1, 4.7, 'Cắt tỉa lông mèo theo phong cách yêu thích.', 'cat_grooming.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Vệ sinh tai và móng', 100000, 0, 20, 0, 4.5, 'Làm sạch tai, cắt tỉa móng cho thú cưng.', 'ear_nail_cleaning.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Chải lông rụng', 80000, 0, 15, 0, 4.3, 'Dịch vụ loại bỏ lông rụng giúp giảm rụng lông trong nhà.', 'shedding_brush.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Khám sức khỏe tổng quát', 300000, 10, 60, 1, 4.9, 'Kiểm tra tổng quát tình trạng sức khỏe thú cưng.', 'health_check.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tiêm phòng dại', 250000, 5, 20, 1, 4.9, 'Tiêm phòng dại cho chó mèo, đảm bảo an toàn.', 'rabies_vaccine.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tiêm phòng 7 bệnh', 500000, 10, 30, 1, 4.8, 'Tiêm vaccine phòng 7 bệnh cho chó mèo.', 'vaccine_7diseases.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Chăm sóc sau phẫu thuật', 400000, 10, NULL, 1, 4.9, 'Dịch vụ chăm sóc thú cưng sau phẫu thuật.', 'post_surgery_care.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Trông giữ thú cưng (1 ngày)', 350000, 5, NULL, 1, 4.6, 'Dịch vụ giữ thú cưng 24h, đảm bảo an toàn.', 'pet_daycare.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Huấn luyện cơ bản', 800000, 15, NULL, 1, 4.8, 'Khóa huấn luyện cơ bản cho chó.', 'basic_training.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Dịch vụ phối giống', 1500000, 20, NULL, 1, 4.7, 'Dịch vụ phối giống chó mèo có kiểm định sức khỏe.', 'mating_service.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Điều trị ve rận', 220000, 10, 40, 1, 4.7, 'Loại bỏ ve, rận cho chó mèo bằng liệu pháp an toàn.', 'flea_treatment.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tư vấn dinh dưỡng', 50000, 0, 30, 0, 4.5, 'Tư vấn dinh dưỡng cho thú cưng theo từng độ tuổi.', 'nutrition_consulting.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
+('Tắm cho chó nhỏ', 150000, 5, 30, 0, 4.7, 'Dịch vụ tắm rửa cho chó dưới 10kg, sử dụng dầu gội chuyên dụng.', '/nv5-petshop/src/uploads/petshop/services/tam-cho-nho.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tắm cho chó lớn', 250000, 10, 45, 0, 4.6, 'Dịch vụ tắm rửa cho chó trên 10kg, chăm sóc da lông.', '/nv5-petshop/src/uploads/petshop/services/tam-cho-lon.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cắt tỉa lông chó', 200000, 5, 40, 1, 4.8, 'Dịch vụ cắt tỉa lông theo yêu cầu, giữ cho thú cưng luôn sạch sẽ.', '/nv5-petshop/src/uploads/petshop/services/cut-long-cho.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cắt tỉa lông mèo', 180000, 5, 35, 1, 4.7, 'Cắt tỉa lông mèo theo phong cách yêu thích.', '/nv5-petshop/src/uploads/petshop/services/cut-long-meo.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Vệ sinh tai và móng', 100000, 0, 20, 0, 4.5, 'Làm sạch tai, cắt tỉa móng cho thú cưng.', '/nv5-petshop/src/uploads/petshop/services/ve-sinh-tai.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Chải lông rụng', 80000, 0, 15, 0, 4.3, 'Dịch vụ loại bỏ lông rụng giúp giảm rụng lông trong nhà.', '/nv5-petshop/src/uploads/petshop/services/trai-long-rung.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Khám sức khỏe tổng quát', 300000, 10, 60, 1, 4.9, 'Kiểm tra tổng quát tình trạng sức khỏe thú cưng.', '/nv5-petshop/src/uploads/petshop/services/kham-suc-khoe.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tiêm phòng dại', 250000, 5, 20, 1, 4.9, 'Tiêm phòng dại cho chó mèo, đảm bảo an toàn.', '/nv5-petshop/src/uploads/petshop/services/tiem-phon-dai.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tiêm phòng 7 bệnh', 500000, 10, 30, 1, 4.8, 'Tiêm vaccine phòng 7 bệnh cho chó mèo.', '/nv5-petshop/src/uploads/petshop/services/time-phong.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Chăm sóc sau phẫu thuật', 400000, 10, NULL, 1, 4.9, 'Dịch vụ chăm sóc thú cưng sau phẫu thuật.', '/nv5-petshop/src/uploads/petshop/services/cham-soc-sau-phau-thuat.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Trông giữ thú cưng (1 ngày)', 350000, 5, NULL, 1, 4.6, 'Dịch vụ giữ thú cưng 24h, đảm bảo an toàn.', '/nv5-petshop/src/uploads/petshop/services/trong-giu-thu-cung.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Huấn luyện cơ bản', 800000, 15, NULL, 1, 4.8, 'Khóa huấn luyện cơ bản cho chó.', '/nv5-petshop/src/uploads/petshop/services/huan-luyen-co-ban.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Dịch vụ phối giống', 1500000, 20, NULL, 1, 4.7, 'Dịch vụ phối giống chó mèo có kiểm định sức khỏe.', '/nv5-petshop/src/uploads/petshop/services/dich-vu-phoi-giong.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Điều trị ve rận', 220000, 10, 40, 1, 4.7, 'Loại bỏ ve, rận cho chó mèo bằng liệu pháp an toàn.', '/nv5-petshop/src/uploads/petshop/services/dieu-tri-ve-ran.webp', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tư vấn dinh dưỡng', 50000, 0, 30, 0, 4.5, 'Tư vấn dinh dưỡng cho thú cưng theo từng độ tuổi.', '/nv5-petshop/src/uploads/petshop/services/tu-van-dinh-duong-thu-cung.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
 
 // Table: posts (Danh sách bài viết)
 $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data ."_posts` (
@@ -230,13 +230,13 @@ $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "
 $sql_create_module[] = "INSERT INTO `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_posts`
 (`title`, `description`, `image`, `content`, `views`, `likes`, `tags`, `status`, `created_at`, `updated_at`)
 VALUES
-('Cách chăm sóc chó con mới sinh', 'Hướng dẫn cách chăm sóc chó con mới sinh để phát triển khỏe mạnh.', 'puppy_care.jpg', 'Chó con mới sinh cần được giữ ấm và bú sữa mẹ trong 4 tuần đầu...', 1200, 150, 'care,health', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Dinh dưỡng hợp lý cho mèo trưởng thành', 'Chế độ dinh dưỡng giúp mèo luôn khỏe mạnh và cân bằng.', 'cat_nutrition.jpg', 'Mèo trưởng thành cần một chế độ ăn giàu protein và chất béo...', 850, 95, 'food,health', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Hướng dẫn huấn luyện chó cơ bản tại nhà', 'Những bước đơn giản để dạy chó vâng lời ngay tại nhà.', 'dog_training.jpg', 'Huấn luyện chó cần sự kiên nhẫn, bắt đầu từ những lệnh cơ bản...', 2200, 300, 'training,behavior', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Dấu hiệu nhận biết bệnh viêm da ở chó', 'Viêm da là bệnh thường gặp ở chó, đây là cách nhận biết.', 'dog_skin_disease.jpg', 'Nếu thấy chó gãi nhiều, da đỏ và có mùi hôi, có thể bị viêm da...', 1400, 120, 'disease,health', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cách phòng tránh bệnh béo phì ở thú cưng', 'Béo phì là vấn đề phổ biến, đây là cách kiểm soát cân nặng.', 'pet_obesity.jpg', 'Thú cưng béo phì có thể mắc nhiều bệnh nghiêm trọng...', 980, 110, 'health,food', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Làm sao để giúp mèo giảm stress?', 'Dấu hiệu nhận biết và cách giảm stress cho mèo.', 'cat_stress.jpg', 'Mèo dễ bị stress do thay đổi môi trường, tiếng ồn lớn...', 780, 90, 'care,behavior', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Thức ăn tốt nhất cho chó nhỏ', 'Chọn thức ăn phù hợp giúp chó nhỏ phát triển toàn diện.', 'small_dog_food.jpg', 'Chó nhỏ cần thức ăn dễ tiêu hóa, giàu protein và canxi...', 670, 85, 'food,health', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Vì sao chó sủa nhiều và cách kiểm soát?', 'Giải thích nguyên nhân và cách giảm tình trạng chó sủa nhiều.', 'dog_barking.jpg', 'Chó sủa có thể do cảnh giác, sợ hãi hoặc muốn thu hút sự chú ý...', 1120, 130, 'behavior,training', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tầm quan trọng của việc tiêm phòng cho thú cưng', 'Các loại vaccine quan trọng mà thú cưng cần được tiêm.', 'pet_vaccination.jpg', 'Tiêm phòng giúp thú cưng phòng tránh nhiều bệnh nguy hiểm...', 1900, 250, 'health,disease', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Những món đồ chơi giúp chó mèo luôn vui vẻ', 'Lựa chọn đồ chơi giúp thú cưng không bị nhàm chán.', 'pet_toys.jpg', 'Đồ chơi không chỉ giúp giải trí mà còn cải thiện trí thông minh...', 530, 75, 'care,behavior', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
+('Cách chăm sóc chó con mới sinh', 'Hướng dẫn cách chăm sóc chó con mới sinh để phát triển khỏe mạnh.', '/nv5-petshop/src/uploads/petshop/posts/anh-thu-cung-cute-de-thuong_014113010_1.jpg', 'Chó con mới sinh cần được giữ ấm và bú sữa mẹ trong 4 tuần đầu...', 1200, 150, 'care,health', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Dinh dưỡng hợp lý cho mèo trưởng thành', 'Chế độ dinh dưỡng giúp mèo luôn khỏe mạnh và cân bằng.', '/nv5-petshop/src/uploads/petshop/posts/ad37c6ce227924b9e85930f98ae282d7_1.jpg', 'Mèo trưởng thành cần một chế độ ăn giàu protein và chất béo...', 850, 95, 'food,health', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Hướng dẫn huấn luyện chó cơ bản tại nhà', 'Những bước đơn giản để dạy chó vâng lời ngay tại nhà.', '/nv5-petshop/src/uploads/petshop/posts/anh-thu-cung-cute-de-thuong_014113010_1.jpg', 'Huấn luyện chó cần sự kiên nhẫn, bắt đầu từ những lệnh cơ bản...', 2200, 300, 'training,behavior', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Dấu hiệu nhận biết bệnh viêm da ở chó', 'Viêm da là bệnh thường gặp ở chó, đây là cách nhận biết.', '/nv5-petshop/src/uploads/petshop/posts/anh-thu-cung-cute-de-thuong_014113010_1.jpg', 'Nếu thấy chó gãi nhiều, da đỏ và có mùi hôi, có thể bị viêm da...', 1400, 120, 'disease,health', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cách phòng tránh bệnh béo phì ở thú cưng', 'Béo phì là vấn đề phổ biến, đây là cách kiểm soát cân nặng.', '/nv5-petshop/src/uploads/petshop/posts/ad37c6ce227924b9e85930f98ae282d7_1.jpg', 'Thú cưng béo phì có thể mắc nhiều bệnh nghiêm trọng...', 980, 110, 'health,food', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Làm sao để giúp mèo giảm stress?', 'Dấu hiệu nhận biết và cách giảm stress cho mèo.', '/nv5-petshop/src/uploads/petshop/posts/ad37c6ce227924b9e85930f98ae282d7_1.jpg', 'Mèo dễ bị stress do thay đổi môi trường, tiếng ồn lớn...', 780, 90, 'care,behavior', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Thức ăn tốt nhất cho chó nhỏ', 'Chọn thức ăn phù hợp giúp chó nhỏ phát triển toàn diện.', '/nv5-petshop/src/uploads/petshop/posts/ad37c6ce227924b9e85930f98ae282d7_1.jpg', 'Chó nhỏ cần thức ăn dễ tiêu hóa, giàu protein và canxi...', 670, 85, 'food,health', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Vì sao chó sủa nhiều và cách kiểm soát?', 'Giải thích nguyên nhân và cách giảm tình trạng chó sủa nhiều.', '/nv5-petshop/src/uploads/petshop/posts/anh-thu-cung-cute-de-thuong_014113010_1.jpg', 'Chó sủa có thể do cảnh giác, sợ hãi hoặc muốn thu hút sự chú ý...', 1120, 130, 'behavior,training', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tầm quan trọng của việc tiêm phòng cho thú cưng', 'Các loại vaccine quan trọng mà thú cưng cần được tiêm.', '/nv5-petshop/src/uploads/petshop/posts/anh-thu-cung-cute-de-thuong_014113010_1.jpg', 'Tiêm phòng giúp thú cưng phòng tránh nhiều bệnh nguy hiểm...', 1900, 250, 'health,disease', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Những món đồ chơi giúp chó mèo luôn vui vẻ', 'Lựa chọn đồ chơi giúp thú cưng không bị nhàm chán.', '/nv5-petshop/src/uploads/petshop/posts/anh-thu-cung-cute-de-thuong_014113010_1.jpg', 'Đồ chơi không chỉ giúp giải trí mà còn cải thiện trí thông minh...', 530, 75, 'care,behavior', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";

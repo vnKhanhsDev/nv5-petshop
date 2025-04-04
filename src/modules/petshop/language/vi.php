@@ -39,3 +39,6 @@ $lang_module['detail'] = 'Chi tiết';
 $lang_module['edit'] = 'Sửa';
 $lang_module['delete'] = 'Xoá';
 $lang_module['empty'] = 'Không có dữ liệu';
+$lang_module['add_service'] = 'Thêm dịch vụ';
+$lang_module['edit_service'] = 'Chỉnh sửa dịch vụ';
+$lang_module['detail_service'] = 'Thông tin dịch vụ';
