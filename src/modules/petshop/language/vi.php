@@ -25,6 +25,7 @@ $lang_module['add_pet'] = 'Thêm thú cưng';
 $lang_module['detail_pet'] = 'Chi tiết thông tin thú cưng';
 $lang_module['edit_pet'] = 'Sửa thông tin thú cưng';
 $lang_module['delete_pet'] = 'Xoá thú cưng';
+$lang_module['empty_pet'] = 'Không có dữ liệu về thú cưng';
 $lang_module['accessories'] = 'Quản lý phụ kiện';
 $lang_module['accessories_add'] = 'Thêm phụ kiện';
 $lang_module['accessories_detail'] = 'Chi tiết thông tin phụ kiện';
