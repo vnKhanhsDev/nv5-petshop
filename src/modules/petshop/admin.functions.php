@@ -38,7 +38,7 @@ $allow_func = [
     'customers/detail',     
     'customers/delete',
     'posts',
-    'posts/create',
+    'posts/add',
     'posts/detail',
     'posts/edit',
     'posts/delete'
