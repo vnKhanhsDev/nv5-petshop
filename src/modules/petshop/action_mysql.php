@@ -84,8 +84,8 @@ $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "
     `tags` SET('new', 'hot', 'best-seller') NOT NULL COMMENT 'Nhãn thú cưng (mới, nổi bật, bán chạy)',
     `rating` FLOAT(3,2) NOT NULL DEFAULT 0 COMMENT 'Điểm đánh giá trung bình (0-5)',
     `description` TEXT COMMENT 'Mô tả thú cưng',
-    `image` VARCHAR(255) NOT NULL COMMENT 'Hình ảnh về thú cưng',
-    `is_show` BOOLEAN NOT NULL DEFAULT 1 COMMENT 'Trạng thái hiển thị (0: Ẩn, 1: Hiện)',
+    `images` VARCHAR(255) NOT NULL COMMENT 'Hình ảnh về thú cưng',
+    `status` BOOLEAN NOT NULL DEFAULT 1 COMMENT 'Trạng thái hiển thị (0: Ẩn, 1: Hiện)',
     `created_at` INT(11) NOT NULL DEFAULT UNIX_TIMESTAMP() COMMENT 'Tạo lúc',
     `updated_at` INT(11) NOT NULL DEFAULT UNIX_TIMESTAMP() COMMENT 'Cập nhật gần nhất',
     PRIMARY KEY (`id`),
@@ -94,7 +94,7 @@ $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "
 ) ENGINE = InnoDB COMMENT = 'Danh sách thú cưng trong cửa hàng';";
 
 $sql_create_module[] = "INSERT INTO `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_pets` 
-(`name`, `species_id`, `breed_id`, `gender`, `age`, `fur_color`, `weight`, `origin`, `is_vaccinated`, `vaccination_details`, `price`, `discount`, `stock`, `tags`, `rating`, `description`, `image`, `is_show`, `created_at`, `updated_at`) 
+(`name`, `species_id`, `breed_id`, `gender`, `age`, `fur_color`, `weight`, `origin`, `is_vaccinated`, `vaccination_details`, `price`, `discount`, `stock`, `tags`, `rating`, `description`, `images`, `status`, `created_at`, `updated_at`) 
 VALUES
 ('Bobby', 1, 1, 'male', 6, 'Vàng', 15.2, 'Trại giống', 1, 'Tiêm phòng dại, care', 15000000, 10, 3, 'new,hot', 4.8, 'Golden Retriever thông minh, thân thiện.', 'golden.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
 ('Luna', 1, 2, 'female', 4, 'Nâu', 5.5, 'Trại giống', 1, 'Tiêm phòng dại', 7000000, 5, 2, 'hot', 4.7, 'Poodle nhỏ nhắn, dễ huấn luyện.', 'poodle.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),

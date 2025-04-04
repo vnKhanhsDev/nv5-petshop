@@ -23,7 +23,8 @@ $module_version = [
     'author' => 'Group3_TTCN_PKA <namkhanhs.dev@gmail.com>',
     'note' => '',
     'uploads_dir' => [
-        $module_upload
+        $module_upload,
+        $module_upload . '/pets',
     ],
     'icon' => 'fa-solid fa-paw'
 ];
