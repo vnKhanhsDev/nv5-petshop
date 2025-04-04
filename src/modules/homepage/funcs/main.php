@@ -26,7 +26,7 @@ $module_petshop = 'petshop'; // Tên module quản lý thú cưng
 
 $sql = "SELECT * 
         FROM " . NV_PREFIXLANG . "_" . $module_petshop . "_pets 
-        WHERE FIND_IN_SET('new', tags) > 0 AND is_show = 1 
+        WHERE FIND_IN_SET('new', tags) > 0 AND status = 1 
         ORDER BY created_at DESC 
         LIMIT 8";
 
@@ -73,7 +73,7 @@ foreach ($services as $service) {
 //Lấy dữ liệu thú cưng được đánh giá cao
 $sql = "SELECT * 
         FROM " . NV_PREFIXLANG . "_" . $module_petshop . "_pets 
-        WHERE FIND_IN_SET('best-seller', tags) > 0 AND is_show = 1 
+        WHERE FIND_IN_SET('best-seller', tags) > 0 AND status = 1 
         ORDER BY created_at DESC 
         LIMIT 8";
 
