@@ -1,93 +1,56 @@
-    <noscript>
-        <div class="alert alert-danger">{LANG.nojs}</div>
-    </noscript>
-    <header>
-        <div class="site-banner" style="background-image: url('{BANNER_SRC}');"></div>
-        <div class="section-header-bar">
-            <div class="wraper">
-                <nav class="header-nav">
-                    <div class="header-nav-inner">
-                        <div class="contactDefault">
-                            [CONTACT_DEFAULT]
-                        </div>
-                        <div class="social-icons">
-                            [SOCIAL_ICONS]
-                        </div>
-                        <div class="personalArea">
-                            [PERSONALAREA]
-                        </div>
+<div class="b-header">
+            <div class="container">
+                <div class="b-header-top-wrap d-flex justify-content-between align-items-center">
+                    <div class="b-header-left d-flex align-items-center">
+                        <a href="#" class="b-header-line-split"><i class="fa-regular fa-envelope"></i> info@besopet-shop.com</a>
+                        <a href="#" class="b-header-line-split"><i class="fa-solid fa-phone"></i> (+84)123 456 789</a>
+                        <ul class="b-header-social-media d-flex align-items-center">
+                            <li class="b-header-social-media-item"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="b-header-social-media-item"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li class="b-header-social-media-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="b-header-social-media-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
                     </div>
-                    <div id="tip" data-content="">
-                        <div class="bg"></div>
+                    <div class="b-header-right d-flex align-items-center">
+                        <a href="#" class="b-header-notification">
+                            <p><i class="fa-regular fa-bell"></i> Thông báo</p>
+                            <span class="b-header-notification-quantity b-quantity">8</span>
+                            <div class="b-header-notification-dropdown b-dropdown">
+                                <p class="b-text-notification-null">Không có thông báo mới</p>
+                            </div>
+                        </a>
+                        <a href="#" class="b-header-line-split">Đăng ký</a>
+                        <a href="#">Đăng nhập</a>
                     </div>
-                </nav>
-            </div>
-        </div>
-        <div class="section-header">
-            <div class="wraper">
-                <div id="header">
-                    <div class="logo">
-                        <a title="{SITE_NAME}" href="{THEME_SITE_HREF}"><img src="{LOGO_SRC}" alt="{SITE_NAME}"></a>
-                        <!-- BEGIN: site_name_h1 -->
-                        <h1>{SITE_NAME}</h1>
-                        <h2>{SITE_DESCRIPTION}</h2>
-                        <!-- END: site_name_h1 -->
-                        <!-- BEGIN: site_name_span -->
-                        <span class="site_name">{SITE_NAME}</span>
-                        <span class="site_description">{SITE_DESCRIPTION}</span>
-                        <!-- END: site_name_span -->
-                    </div>
-                    <div class="right-ads">
-                        [HEAD_RIGHT]
+                </div>
+                <div class="b-header-main-wrap d-flex justify-content-between align-items-center">
+                    <a href="#" class="b-header-logo">
+                        <img src="./themes/default/images/pngwing.com.png" alt="BesoPetShop">
+                    </a>
+                    <ul class="b-header-nav">
+                        <li class="b-header-nav-item b-header-active"><a href="#">trang chủ</a></li>
+                        <li class="b-header-nav-item"><a href="./pages/category.html?item=thucung">thú cưng</a></li>
+                        <li class="b-header-nav-item"><a href="./pages/category.html?item=sanpham">sản phẩm</a></li>
+                        <li class="b-header-nav-item"><a href="./pages/category.html?item=dichvu">dịch vụ</a></li>
+                        <li class="b-header-nav-item"><a href="./pages/about.html">giới thiệu</a></li>
+                        <li class="b-header-nav-item"><a href="./pages/contact.html">liên hệ</a></li>
+                    </ul>
+                    <div class="b-header-cart-shopping-wrap">
+                        <a href="./pages/cart.html" class="b-header-cart-shopping">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="b-header-cart-shopping-quantity b-quantity">99</span>
+                        </a>
+                        <div class="b-header-cart-shopping-dropdown b-dropdown">
+                            <p class="b-header-cart-shopping-dropdown-title">sản phẩm mới thêm</p>
+                            <div class="b-header-cart-shopping-dropdown-products">
+                                <div class="b-header-cart-shopping-dropdown-product">
+                                    <p class="b-text-notification-null">Không có sản phẩm mới</p>
+                                </div>
+                            </div>
+                            <a href="./pages/cart.html" class="b-header-view-cart-button">xem giỏ hàng</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <div class="section-nav">
-        <div class="wraper">
-            <nav class="second-nav" id="menusite">
-                <div class="container">
-                    <div class="row">
-                        <div class="bg box-shadow">
-                            [MENU_SITE]
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <div class="section-body">
-        <div class="wraper">
-            <section>
-                <div class="container" id="body">
-                    <nav class="third-nav">
-                        <div class="row">
-                            <div class="bg">
-                            <div class="clearfix">
-                                <div class="col-xs-24 col-sm-18 col-md-18">
-                                    <!-- BEGIN: breadcrumbs -->
-                                    <div class="breadcrumbs-wrap">
-                                        <div class="display">
-                                            <a class="show-subs-breadcrumbs hidden" href="#" data-toggle="showSubBreadcrumbs"><em class="fa fa-lg fa-angle-right"></em></a>
-                                            <ul class="breadcrumbs list-none"></ul>
-                                        </div>
-                                        <ul class="subs-breadcrumbs"></ul>
-                                        <ul class="temp-breadcrumbs hidden" itemscope itemtype="https://schema.org/BreadcrumbList">
-                                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="{THEME_SITE_HREF}" itemprop="item" title="{LANG.Home}"><span itemprop="name">{LANG.Home}</span></a><i class="hidden" itemprop="position" content="1"></i></li>
-                                            <!-- BEGIN: loop --><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="{BREADCRUMBS.link}" itemprop="item" title="{BREADCRUMBS.title}"><span class="txt" itemprop="name">{BREADCRUMBS.title}</span></a><i class="hidden" itemprop="position" content="{BREADCRUMBS.position}"></i></li><!-- END: loop -->
-                                        </ul>
-                                    </div>
-                                    <!-- END: breadcrumbs -->
-                                    <!-- BEGIN: currenttime --><span class="current-time">{NV_CURRENTTIME}</span><!-- END: currenttime -->
-                                </div>
-                                <div class="headerSearch col-xs-24 col-sm-6 col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" maxlength="{NV_MAX_SEARCH_LENGTH}" placeholder="{LANG.search}..."><span class="input-group-btn"><button type="button" class="btn btn-info" data-url="{THEME_SEARCH_URL}" data-minlength="{NV_MIN_SEARCH_LENGTH}" data-click="y"><em class="fa fa-search fa-lg"></em></button></span>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </nav>
-                    [THEME_ERROR_INFO]
+        <div class="b-header-buffer" style="padding-top: 129px;"></div>

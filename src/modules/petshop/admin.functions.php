@@ -32,6 +32,7 @@ $allow_func = [
     'services/delete',
     'orders',
     'orders/detail',
+    'orders/delete',
     'orders/edit',
     'customers',
     'customers/detail',     

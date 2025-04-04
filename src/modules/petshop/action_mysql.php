@@ -195,21 +195,21 @@ $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "
 $sql_create_module[] = "INSERT INTO `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_services` 
 (`name`, `price`, `discount`, `estimated_time`, `requires_appointment`, `rating`, `description`, `image`, `is_show`, `created_at`, `updated_at`)
 VALUES
-('Tắm cho chó nhỏ', 150000, 5, 30, 0, 4.7, 'Dịch vụ tắm rửa cho chó dưới 10kg, sử dụng dầu gội chuyên dụng.', 'bath_small_dog.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tắm cho chó lớn', 250000, 10, 45, 0, 4.6, 'Dịch vụ tắm rửa cho chó trên 10kg, chăm sóc da lông.', 'bath_large_dog.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cắt tỉa lông chó', 200000, 5, 40, 1, 4.8, 'Dịch vụ cắt tỉa lông theo yêu cầu, giữ cho thú cưng luôn sạch sẽ.', 'dog_grooming.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Cắt tỉa lông mèo', 180000, 5, 35, 1, 4.7, 'Cắt tỉa lông mèo theo phong cách yêu thích.', 'cat_grooming.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Vệ sinh tai và móng', 100000, 0, 20, 0, 4.5, 'Làm sạch tai, cắt tỉa móng cho thú cưng.', 'ear_nail_cleaning.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Chải lông rụng', 80000, 0, 15, 0, 4.3, 'Dịch vụ loại bỏ lông rụng giúp giảm rụng lông trong nhà.', 'shedding_brush.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Khám sức khỏe tổng quát', 300000, 10, 60, 1, 4.9, 'Kiểm tra tổng quát tình trạng sức khỏe thú cưng.', 'health_check.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tiêm phòng dại', 250000, 5, 20, 1, 4.9, 'Tiêm phòng dại cho chó mèo, đảm bảo an toàn.', 'rabies_vaccine.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tiêm phòng 7 bệnh', 500000, 10, 30, 1, 4.8, 'Tiêm vaccine phòng 7 bệnh cho chó mèo.', 'vaccine_7diseases.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Chăm sóc sau phẫu thuật', 400000, 10, NULL, 1, 4.9, 'Dịch vụ chăm sóc thú cưng sau phẫu thuật.', 'post_surgery_care.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Trông giữ thú cưng (1 ngày)', 350000, 5, NULL, 1, 4.6, 'Dịch vụ giữ thú cưng 24h, đảm bảo an toàn.', 'pet_daycare.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Huấn luyện cơ bản', 800000, 15, NULL, 1, 4.8, 'Khóa huấn luyện cơ bản cho chó.', 'basic_training.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Dịch vụ phối giống', 1500000, 20, NULL, 1, 4.7, 'Dịch vụ phối giống chó mèo có kiểm định sức khỏe.', 'mating_service.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Điều trị ve rận', 220000, 10, 40, 1, 4.7, 'Loại bỏ ve, rận cho chó mèo bằng liệu pháp an toàn.', 'flea_treatment.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-('Tư vấn dinh dưỡng', 50000, 0, 30, 0, 4.5, 'Tư vấn dinh dưỡng cho thú cưng theo từng độ tuổi.', 'nutrition_consulting.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
+('Tắm cho chó nhỏ', 150000, 5, 30, 0, 4.7, 'Dịch vụ tắm rửa cho chó dưới 10kg, sử dụng dầu gội chuyên dụng.', '/nv5-petshop/src/uploads/petshop/services/tam-cho-nho.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tắm cho chó lớn', 250000, 10, 45, 0, 4.6, 'Dịch vụ tắm rửa cho chó trên 10kg, chăm sóc da lông.', '/nv5-petshop/src/uploads/petshop/services/tam-cho-lon.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cắt tỉa lông chó', 200000, 5, 40, 1, 4.8, 'Dịch vụ cắt tỉa lông theo yêu cầu, giữ cho thú cưng luôn sạch sẽ.', '/nv5-petshop/src/uploads/petshop/services/cut-long-cho.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Cắt tỉa lông mèo', 180000, 5, 35, 1, 4.7, 'Cắt tỉa lông mèo theo phong cách yêu thích.', '/nv5-petshop/src/uploads/petshop/services/cut-long-meo.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Vệ sinh tai và móng', 100000, 0, 20, 0, 4.5, 'Làm sạch tai, cắt tỉa móng cho thú cưng.', '/nv5-petshop/src/uploads/petshop/services/ve-sinh-tai.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Chải lông rụng', 80000, 0, 15, 0, 4.3, 'Dịch vụ loại bỏ lông rụng giúp giảm rụng lông trong nhà.', '/nv5-petshop/src/uploads/petshop/services/trai-long-rung.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Khám sức khỏe tổng quát', 300000, 10, 60, 1, 4.9, 'Kiểm tra tổng quát tình trạng sức khỏe thú cưng.', '/nv5-petshop/src/uploads/petshop/services/kham-suc-khoe.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tiêm phòng dại', 250000, 5, 20, 1, 4.9, 'Tiêm phòng dại cho chó mèo, đảm bảo an toàn.', '/nv5-petshop/src/uploads/petshop/services/tiem-phon-dai.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tiêm phòng 7 bệnh', 500000, 10, 30, 1, 4.8, 'Tiêm vaccine phòng 7 bệnh cho chó mèo.', '/nv5-petshop/src/uploads/petshop/services/time-phong.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Chăm sóc sau phẫu thuật', 400000, 10, NULL, 1, 4.9, 'Dịch vụ chăm sóc thú cưng sau phẫu thuật.', '/nv5-petshop/src/uploads/petshop/services/cham-soc-sau-phau-thuat.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Trông giữ thú cưng (1 ngày)', 350000, 5, NULL, 1, 4.6, 'Dịch vụ giữ thú cưng 24h, đảm bảo an toàn.', '/nv5-petshop/src/uploads/petshop/services/trong-giu-thu-cung.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Huấn luyện cơ bản', 800000, 15, NULL, 1, 4.8, 'Khóa huấn luyện cơ bản cho chó.', '/nv5-petshop/src/uploads/petshop/services/huan-luyen-co-ban.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Dịch vụ phối giống', 1500000, 20, NULL, 1, 4.7, 'Dịch vụ phối giống chó mèo có kiểm định sức khỏe.', '/nv5-petshop/src/uploads/petshop/services/dich-vu-phoi-giong.jpg', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Điều trị ve rận', 220000, 10, 40, 1, 4.7, 'Loại bỏ ve, rận cho chó mèo bằng liệu pháp an toàn.', '/nv5-petshop/src/uploads/petshop/services/dieu-tri-ve-ran.webp', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
+('Tư vấn dinh dưỡng', 50000, 0, 30, 0, 4.5, 'Tư vấn dinh dưỡng cho thú cưng theo từng độ tuổi.', '/nv5-petshop/src/uploads/petshop/services/tu-van-dinh-duong-thu-cung.png', 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());";
 
 // Table: posts (Danh sách bài viết)
 $sql_create_module[] = "CREATE TABLE `" . $db_config['prefix'] . "_" . $lang . "_" . $module_data ."_posts` (
